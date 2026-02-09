@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테이블오더 - Customer</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="header">
+        <div>
+          <div class="brand">Table Order Customer</div>
+          <div class="muted">기본 계정: store `demo-store`, table `T1`, password `1111`</div>
+        </div>
+        <span class="badge" id="sessionBadge">로그인 필요</span>
+      </header>
+
+      <section class="surface" id="setupSection">
+        <h3>테이블 초기 설정 / 로그인</h3>
+        <div class="form-row">
+          <input id="storeIdInput" placeholder="Store ID" value="demo-store" />
+          <input id="tableNumberInput" placeholder="Table Number" value="T1" />
+          <input id="tablePasswordInput" placeholder="Table Password" value="1111" type="password" />
+          <button class="btn-primary" id="loginButton">로그인</button>
+        </div>
+        <div class="muted">한 번 로그인하면 다음 접속 시 자동 로그인됩니다.</div>
+        <div class="toast" id="setupToast"></div>
+      </section>
+
+      <section class="customer-layout hidden" id="appSection">
+        <main class="surface">
+          <div class="form-row" style="justify-content: space-between; align-items: center">
+            <h3 style="margin: 0">메뉴</h3>
+            <button class="btn-secondary" id="refreshMenuButton">새로고침</button>
+          </div>
+          <div class="menu-categories" id="categoryTabs"></div>
+          <div class="menu-grid" id="menuGrid"></div>
+        </main>
+
+        <aside class="grid" style="grid-template-columns: 1fr">
+          <section class="surface">
+            <h3 style="margin-top: 0">장바구니</h3>
+            <div class="cart-list" id="cartList"></div>
+            <div><strong id="cartTotal">총액: 0원</strong></div>
+            <div class="form-row">
+              <button class="btn-secondary" id="clearCartButton">비우기</button>
+              <button class="btn-primary" id="placeOrderButton">주문 확정</button>
+            </div>
+            <div class="toast" id="cartToast"></div>
+          </section>
+
+          <section class="surface">
+            <h3 style="margin-top: 0">현재 세션 주문 내역</h3>
+            <div class="order-history" id="orderHistory"></div>
+            <button class="btn-secondary" id="loadMoreHistoryButton">주문내역 더보기</button>
+          </section>
+        </aside>
+      </section>
+    </div>
+
+    <div class="modal" id="orderModal">
+      <div class="modal-card">
+        <h3 id="orderModalTitle">주문 성공</h3>
+        <p id="orderModalBody"></p>
+        <div class="muted" id="orderModalCountdown"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/customer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테이블오더 - Admin</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="header">
+        <div>
+          <div class="brand">Table Order Admin</div>
+          <div class="muted">기본 계정: store `demo-store`, username `admin`, password `admin1234`</div>
+        </div>
+        <span class="badge" id="adminBadge">로그인 필요</span>
+      </header>
+
+      <section class="surface" id="loginSection">
+        <h3>관리자 로그인</h3>
+        <div class="form-row">
+          <input id="adminStoreId" value="demo-store" placeholder="Store ID" />
+          <input id="adminUsername" value="admin" placeholder="Username" />
+          <input id="adminPassword" value="admin1234" placeholder="Password" type="password" />
+          <button class="btn-primary" id="adminLoginButton">로그인</button>
+        </div>
+        <div class="toast" id="loginToast"></div>
+      </section>
+
+      <section class="admin-grid hidden" id="adminApp">
+        <div class="grid" style="grid-template-columns: 1fr">
+          <section class="surface">
+            <div class="form-row" style="justify-content: space-between; align-items: center">
+              <h3 style="margin: 0">실시간 주문 대시보드</h3>
+              <div class="form-row" style="margin: 0">
+                <input id="tableFilterInput" placeholder="테이블 필터 (예: T1)" />
+                <button class="btn-secondary" id="refreshDashboardButton">새로고침</button>
+              </div>
+            </div>
+            <div class="table-cards" id="tableCards"></div>
+          </section>
+
+          <section class="surface">
+            <h3 style="margin-top: 0">테이블 초기 설정</h3>
+            <div class="form-row">
+              <input id="setupTableNumberInput" placeholder="Table Number (예: T4)" />
+              <input id="setupTablePasswordInput" placeholder="Table Password" />
+              <button class="btn-secondary" id="setupTableButton">설정 저장</button>
+            </div>
+            <div class="toast" id="setupTableToast"></div>
+          </section>
+
+          <section class="surface">
+            <h3 style="margin-top: 0">테이블 과거 내역 조회</h3>
+            <div class="form-row">
+              <input id="historyTableInput" placeholder="Table Number (예: T1)" />
+              <input id="historyDateInput" type="date" />
+              <button class="btn-secondary" id="historyButton">조회</button>
+              <button class="btn-secondary" id="historyCloseButton">닫기</button>
+            </div>
+            <div id="historyList" class="order-history"></div>
+          </section>
+        </div>
+
+        <section class="surface">
+          <h3 style="margin-top: 0">메뉴 관리</h3>
+          <div class="form-row">
+            <input id="menuName" placeholder="메뉴명" />
+            <input id="menuPrice" placeholder="가격" type="number" />
+            <input id="menuCategory" placeholder="카테고리" />
+          </div>
+          <div class="form-row">
+            <input id="menuDescription" placeholder="설명" />
+            <input id="menuImageUrl" placeholder="이미지 URL" />
+            <input id="menuDisplayOrder" placeholder="노출순서" type="number" />
+            <button class="btn-primary" id="menuCreateButton">등록</button>
+          </div>
+          <div class="toast" id="menuToast"></div>
+          <div class="order-history" id="menuList"></div>
+        </section>
+      </section>
+    </div>
+
+    <script type="module" src="/admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "createdAt": "2026-02-09T05:43:28.955Z",
+    "nextOrderId": 4,
+    "nextMenuId": 5,
+    "nextHistoryId": 2
+  },
+  "stores": [
+    {
+      "storeId": "demo-store",
+      "name": "AIDLC Demo Store",
+      "adminUsers": [
+        {
+          "id": "admin-1",
+          "username": "admin",
+          "passwordHash": "ebea9ddc96c443c4a4baf1608e5470e9e3d3b9b999cd8d0f5d0da755b830524a0d942aab19b9e4375cf04d0dc655c55a2e47c2114ce29d16c95f8acb2b573555",
+          "passwordSalt": "eb4049cab234a7c01807c7b12d4d7ec0"
+        }
+      ],
+      "tables": [
+        {
+          "tableNumber": "T1",
+          "tablePassword": "1111",
+          "activeSessionId": "sess-T1-b83a5f405ab0",
+          "sessionStartedAt": "2026-02-09T05:50:45.849Z"
+        },
+        {
+          "tableNumber": "T2",
+          "tablePassword": "2222",
+          "activeSessionId": null,
+          "sessionStartedAt": null
+        },
+        {
+          "tableNumber": "T3",
+          "tablePassword": "3333",
+          "activeSessionId": null,
+          "sessionStartedAt": null
+        }
+      ],
+      "menus": [
+        {
+          "menuId": "m-1",
+          "name": "시그니처 파스타",
+          "price": 15900,
+          "description": "크림과 베이컨, 버섯이 어우러진 대표 메뉴",
+          "category": "메인",
+          "imageUrl": "https://images.unsplash.com/photo-1551183053-bf91a1d81141",
+          "displayOrder": 1,
+          "isActive": true
+        },
+        {
+          "menuId": "m-2",
+          "name": "불고기 라이스",
+          "price": 12900,
+          "description": "달콤짭짤 소불고기와 밥",
+          "category": "메인",
+          "imageUrl": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+          "displayOrder": 2,
+          "isActive": true
+        },
+        {
+          "menuId": "m-3",
+          "name": "레몬에이드",
+          "price": 4500,
+          "description": "상큼한 수제 레몬에이드",
+          "category": "음료",
+          "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd",
+          "displayOrder": 3,
+          "isActive": true
+        },
+        {
+          "menuId": "m-4",
+          "name": "초코 브라우니",
+          "price": 5900,
+          "description": "바닐라 아이스크림과 함께 제공",
+          "category": "디저트",
+          "imageUrl": "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e",
+          "displayOrder": 4,
+          "isActive": true
+        }
+      ],
+      "orders": [],
+      "orderHistories": [
+        {
+          "historyId": "h-1",
+          "storeId": "demo-store",
+          "tableNumber": "T1",
+          "sessionId": "sess-T1-3d4f1fd1b5bf",
+          "orders": [
+            {
+              "orderId": "o-2",
+              "orderNumber": "T1-0002",
+              "storeId": "demo-store",
+              "tableNumber": "T1",
+              "sessionId": "sess-T1-3d4f1fd1b5bf",
+              "status": "완료",
+              "items": [
+                {
+                  "menuId": "m-2",
+                  "menuName": "불고기 라이스",
+                  "quantity": 1,
+                  "unitPrice": 12900,
+                  "lineTotal": 12900
+                },
+                {
+                  "menuId": "m-3",
+                  "menuName": "레몬에이드",
+                  "quantity": 2,
+                  "unitPrice": 4500,
+                  "lineTotal": 9000
+                }
+              ],
+              "totalAmount": 21900,
+              "createdAt": "2026-02-09T05:50:23.128Z"
+            }
+          ],
+          "completedAt": "2026-02-09T05:50:42.710Z"
+        }
+      ]
+    }
+  ]
+}
